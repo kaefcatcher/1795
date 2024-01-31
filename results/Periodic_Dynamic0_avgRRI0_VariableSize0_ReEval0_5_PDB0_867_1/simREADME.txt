@@ -1,0 +1,26 @@
+----------------------
+Simulation:
+ - simulation time = 6 s 
+ - seed = 867
+ - run = 1
+ - UE count = 5
+ - MCS = 13
+ - OFDM numerology index = 0
+ - IBE = 0
+ - SubChannel size = 10 RBs
+ - Channel BW = 10 MHz. Channel BW = 52 RBs
+ - Re-evaluation = 0
+ --- UMH variant = 0
+ --- All slots variant = 0
+ - Re-tranmissions = 0
+ - Periodic traffic = 1
+ - Aperiodic traffic = 0
+ - Mixed traffic = 0
+ - Fixed packet size 
+ - MAC layer:
+ --- Dynamic scheduling 0
+ --- Minimum RRI 
+ - RSRP threshold = -128 dBm
+ - RSSI threshold = -88 dBm
+ - PHY sensitivity = -103.5 dBm
+ --- Frequency-reuse disabled 
