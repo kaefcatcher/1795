@@ -493,7 +493,32 @@ void Print (NodeContainer VehicleUEs) {
         positFile.close();
 }
 
+Vector getNextCoords() {
+    // Define static variable to keep track of file stream and current position
+    static std::ifstream traceFile("trace.csv");
+    static std::string currentLine;
 
+    // Read the next line from the file
+    if (std::getline(traceFile, currentLine)) {
+        // Parse the line to extract x, y, and z positions
+        std::istringstream iss(currentLine);
+        std::string xposStr, yposStr, zposStr;
+        std::getline(iss, xposStr, ',');
+        std::getline(iss, yposStr, ',');
+        std::getline(iss, zposStr, ',');
+
+        // Convert positions to double
+        double xpos = std::stod(xposStr);
+        double ypos = std::stod(yposStr);
+        double zpos = std::stod(zposStr);
+
+        // Return the Vector with extracted positions
+        return Vector(xpos, ypos, zpos);
+    } else {
+        // If no more lines in the file, return an empty vector
+        return Vector(0.0, 0.0, 0.0);
+    }
+}
 
 int
 main (int argc, char *argv[])
@@ -1057,7 +1082,7 @@ main (int argc, char *argv[])
   }
   mobilityUE.SetPositionAllocator(positionAlloc);
   // mobilityUE.SetMobilityModel("ns3::ConstantVelocityMobilityModel");
-  mobilityUE.SetMobilityModel("ns3::CircularMobilityModel");
+  mobilityUE.SetMobilityModel("ns3::ConstantVelocityMobilityModel");
   //mobilityUE->SetVelocity({20,0,0});
   mobilityUE.Install (ueResponders);
 
@@ -1066,10 +1091,12 @@ main (int argc, char *argv[])
     Ptr<Node> node = *L;
     Ptr<MobilityModel> mob = node->GetObject<MobilityModel> ();
     // Ptr<ConstantVelocityMobilityModel> VelMob = node->GetObject<ConstantVelocityMobilityModel>();
-    Ptr<CircularMobilityModel> VelMob = node->GetObject<CircularMobilityModel>();
+    Ptr<ConstantVelocityMobilityModel> VelMob = node->GetObject<ConstantVelocityMobilityModel>();
     // if (mob->GetPosition().y > 13)
     //   VelMob->SetVelocity(Vector(19.44, 0, 0));
-         VelMob->DoSetVelocityAngleRadius(100,90,10);
+        //  VelMob->DoSetVelocityAngleRadius(100,90,10);
+            VelMob->SetPosition(getNextCoords());
+    VelMob->SetVelocity(Vector(0,0,0));
 //      VelMob->SetVelocity(Vector(0, 0, 0));     
     // else
     //   VelMob->SetVelocity(Vector(-19.44, 0, 0));
@@ -1158,7 +1185,7 @@ main (int argc, char *argv[])
     
   }
 
-//  Print(ueResponders);  // Print the initial position of the nodes in the output file
+ Print(ueResponders);  // Print the initial position of the nodes in the output file
    
 
   Sl3GPPChannelMatrix->InitChannelMatrix(ueResponders);
