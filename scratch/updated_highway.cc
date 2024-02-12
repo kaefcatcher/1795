@@ -495,7 +495,7 @@ void Print (NodeContainer VehicleUEs) {
 
 Vector getNextCoords() {
     // Define static variable to keep track of file stream and current position
-    static std::ifstream traceFile("trace.csv");
+    static std::ifstream traceFile("xml2csv/trace.csv");
     static std::string currentLine;
 
     // Read the next line from the file
@@ -1086,6 +1086,9 @@ main (int argc, char *argv[])
   //mobilityUE->SetVelocity({20,0,0});
   mobilityUE.Install (ueResponders);
 
+  std::string tracePath = "trace1.xml";
+  std::system(("cd xml2csv && python3 xml2csv.py -p " + tracePath).c_str());
+  
   for (NodeContainer::Iterator L = ueResponders.Begin(); L != ueResponders.End(); ++L)
   {  
     Ptr<Node> node = *L;
