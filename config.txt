@@ -5,4 +5,4 @@ noIBE=true;Disable In-Band Emissions (IBE)
 Numerology=1;Configure the OFDM numerology
 ChannelBW=30;Channel bandwidth in MHz
 seed=1;The random seed
-
+tracefile="xml2csv/trace1.xml";
