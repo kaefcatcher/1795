@@ -492,10 +492,8 @@ void Print (NodeContainer VehicleUEs) {
         Simulator::Schedule (MilliSeconds (TrepPrint), &Print, VehicleUEs);      
         positFile.close();
 }
-
-Vector getNextCoords() {
+Vector getNextCoords(std::ifstream& traceFile) {
     // Define static variable to keep track of file stream and current position
-    static std::ifstream traceFile("xml2csv/trace.csv");
     static std::string currentLine;
 
     // Read the next line from the file
@@ -618,8 +616,11 @@ main (int argc, char *argv[])
 
   Point polygonTX[] = {{975, 1870}, {1540, 1626}, {1965, 2121}, {2556, 3253}, {1798,3597}, {966,2492}}; 
   Point polygonRX[] = {{962, 1861}, {1541, 1614}, {1975, 2114}, {2572, 3258}, {1793,3609}, {953,2491}}; 
+  static std::string traceFileName; 
 
   CommandLine cmd;
+  cmd.AddValue ("tracefile", "Input tracefile", traceFileName);
+  std::ifstream traceFile(traceFileName);
   cmd.AddValue ("Vehicles", "Number of vehicles", ueCount);
   cmd.AddValue ("period", "Sidelink period", period);
   cmd.AddValue ("pscchLength", "Length of PSCCH.", pscchLength);
@@ -1098,7 +1099,7 @@ main (int argc, char *argv[])
     // if (mob->GetPosition().y > 13)
     //   VelMob->SetVelocity(Vector(19.44, 0, 0));
         //  VelMob->DoSetVelocityAngleRadius(100,90,10);
-            VelMob->SetPosition(getNextCoords());
+            VelMob->SetPosition(getNextCoords(traceFile));
     VelMob->SetVelocity(Vector(0,0,0));
 //      VelMob->SetVelocity(Vector(0, 0, 0));     
     // else
