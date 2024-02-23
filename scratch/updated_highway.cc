@@ -620,7 +620,6 @@ main (int argc, char *argv[])
 
   CommandLine cmd;
   cmd.AddValue ("tracefile", "Input tracefile", traceFileName);
-  std::ifstream traceFile(traceFileName);
   cmd.AddValue ("Vehicles", "Number of vehicles", ueCount);
   cmd.AddValue ("period", "Sidelink period", period);
   cmd.AddValue ("pscchLength", "Length of PSCCH.", pscchLength);
@@ -1087,8 +1086,8 @@ main (int argc, char *argv[])
   //mobilityUE->SetVelocity({20,0,0});
   mobilityUE.Install (ueResponders);
 
-  std::string tracePath = "trace1.xml";
-  std::system(("cd xml2csv && python3 xml2csv.py -p " + tracePath).c_str());
+  std::system(("cd xml2csv && python3 xml2csv.py -p " + traceFileName).c_str());
+  std::ifstream traceFile(traceFileName);
   
   for (NodeContainer::Iterator L = ueResponders.Begin(); L != ueResponders.End(); ++L)
   {  
