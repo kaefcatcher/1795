@@ -1,8 +1,10 @@
-Vehicles=5;number of vehicles
-simTime=6;The simulated time in seconds
-runNo=1;The Run number
-noIBE=true;Disable In-Band Emissions (IBE)
-Numerology=1;Configure the OFDM numerology
-ChannelBW=30;Channel bandwidth in MHz
-seed=1;The random seed
-tracefile="xml2csv/trace1.xml";
+Vehicles=5
+simTime=6
+runNo=1
+noIBE=true
+Numerology=1
+ChannelBW=30
+seed=1
+tracefile="trace1.xml"
+Periodic=true
+

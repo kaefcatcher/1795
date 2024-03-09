@@ -1,11 +1,11 @@
 import subprocess
 import Tkinter as tk
 import ttk
+from tkFileDialog import askopenfilename
 
 def main():
     root = tk.Tk()
     root.title("Configuration Parameters")
-
 
     canvas = tk.Canvas(root)
     canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=tk.TRUE)
@@ -14,7 +14,6 @@ def main():
     scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
     canvas.configure(yscrollcommand=scrollbar.set)
 
-
     frame = tk.Frame(canvas)
     canvas.create_window((0, 0), window=frame, anchor=tk.NW)
 
@@ -22,7 +21,6 @@ def main():
         canvas.configure(scrollregion=canvas.bbox("all"))
 
     frame.bind("<Configure>", on_configure)
-
 
     parameters = {
         "Vehicles": [4],
@@ -57,7 +55,6 @@ def main():
         "tracefile": [""]
     }
 
-
     def execute_command():
         config = {}
         for param, entry in entry_widgets.items():
@@ -65,18 +62,25 @@ def main():
             if value:
                 config[param] = value
 
-
         command = "./waf --run \"scratch/updated_highway"
         for param, value in config.items():
             command += " --{}={}".format(param, value)
         command += "\""
 
-
         print("Running command:", command)
         subprocess.call(command, shell=True)
+        root.destroy()
 
-
-
+    def import_parameters():
+        filename = askopenfilename(filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
+        if filename:
+            with open(filename, 'r') as file:
+                lines = file.readlines()
+                for line in lines:
+                    if '=' in line:
+                        param, value = line.strip().split('=')
+                        if param in parameters:
+                            entry_widgets[param].insert(0, value)
 
     entry_widgets = {}
     row = 0
@@ -88,9 +92,11 @@ def main():
         entry_widgets[param] = entry
         row += 1
 
+    import_button = tk.Button(root, text="Import Parameters", command=import_parameters)
+    import_button.pack(padx=10, pady=5)
 
     execute_button = tk.Button(root, text="Execute Command", command=execute_command)
-    execute_button.pack(padx=10, pady=10)
+    execute_button.pack(padx=10, pady=5)
 
     root.mainloop()
 
