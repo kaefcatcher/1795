@@ -18,3 +18,6 @@ clean:
 
 distclean:
 	./waf distclean
+
+command:
+	@python testing_config.py
