@@ -1,10 +1,10 @@
-Vehicles=5
+Vehicles=2
 simTime=6
 runNo=1
 noIBE=true
 Numerology=1
 ChannelBW=30
 seed=1
-tracefile="trace1.xml"
+tracefile="trace"
 Periodic=true
 

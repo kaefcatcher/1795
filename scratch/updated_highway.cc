@@ -30,6 +30,10 @@
 #include <random>
 #include <ns3/nr-v2x-amc.h>
 
+
+
+
+
 NS_LOG_COMPONENT_DEFINE ("DebugScript");
 
 using namespace ns3;
@@ -75,6 +79,8 @@ bool ETSITraffic, avgRRI;
 void LoadCAMtraces (NodeContainer VehicleUEs);
 
 void Print (NodeContainer VehicleUEs);
+
+std::ifstream traceFile("xml2csv/trace.csv");
 
 PosEnabler PositionChecker;
 
@@ -440,7 +446,43 @@ void LoadCAMtraces (NodeContainer VehicleUEs)
 //  std::cin.get();
 }
 
+Vector getNextCoords(std::ifstream& traceFile) {
+    // Define static variable to keep track of file stream and current position
+    static std::string currentLine;
 
+    // Read the next line from the file
+    if (std::getline(traceFile, currentLine)) {
+        // Parse the line to extract x, y, and z positions
+        std::istringstream iss(currentLine);
+        std::string xposStr, yposStr, zposStr;
+        std::getline(iss, xposStr, ',');
+        std::getline(iss, yposStr, ',');
+        std::getline(iss, zposStr, ',');
+
+        // Convert positions to double
+        double xpos = std::stod(xposStr);
+        double ypos = std::stod(yposStr);
+        double zpos = std::stod(zposStr);
+
+        // Return the Vector with extracted positions
+        return Vector(xpos, ypos, zpos);
+    } else {
+        // If no more lines in the file, return an empty vector
+        return Vector(0.0, 0.0, 0.0);
+    }
+}
+
+void updateNodePositions(std::ifstream* traceFile, NodeContainer ueResponders) {
+    for (NodeContainer::Iterator L = ueResponders.Begin(); L != ueResponders.End(); ++L) {
+        Ptr<Node> node = *L;
+        Ptr<MobilityModel> mob = node->GetObject<MobilityModel>();
+        Ptr<ConstantPositionMobilityModel> velMob = DynamicCast<ConstantPositionMobilityModel>(mob);
+        if (!velMob) continue; // Skip if not a ConstantPositionMobilityModel
+
+        Vector newPos = getNextCoords(*traceFile); // Get next coordinates from the file
+        velMob->SetPosition(newPos); // Set the new position for the node
+    }
+}
 
 
 void Print (NodeContainer VehicleUEs) {
@@ -489,34 +531,14 @@ void Print (NodeContainer VehicleUEs) {
            PrevZ[ID-1] = pos.z;
         }         
      //   Simulator::Schedule (MilliSeconds (TrepPrint), &Print);
-        Simulator::Schedule (MilliSeconds (TrepPrint), &Print, VehicleUEs);      
+        Simulator::Schedule (MilliSeconds (TrepPrint), &Print, VehicleUEs);     
+        Simulator::Schedule (MilliSeconds (TrepPrint), &updateNodePositions, &traceFile, VehicleUEs); 
         positFile.close();
 }
-Vector getNextCoords(std::ifstream& traceFile) {
-    // Define static variable to keep track of file stream and current position
-    static std::string currentLine;
 
-    // Read the next line from the file
-    if (std::getline(traceFile, currentLine)) {
-        // Parse the line to extract x, y, and z positions
-        std::istringstream iss(currentLine);
-        std::string xposStr, yposStr, zposStr;
-        std::getline(iss, xposStr, ',');
-        std::getline(iss, yposStr, ',');
-        std::getline(iss, zposStr, ',');
 
-        // Convert positions to double
-        double xpos = std::stod(xposStr);
-        double ypos = std::stod(yposStr);
-        double zpos = std::stod(zposStr);
 
-        // Return the Vector with extracted positions
-        return Vector(xpos, ypos, zpos);
-    } else {
-        // If no more lines in the file, return an empty vector
-        return Vector(0.0, 0.0, 0.0);
-    }
-}
+
 
 int
 main (int argc, char *argv[])
@@ -1082,40 +1104,51 @@ main (int argc, char *argv[])
   }
   mobilityUE.SetPositionAllocator(positionAlloc);
   // mobilityUE.SetMobilityModel("ns3::ConstantVelocityMobilityModel");
-  mobilityUE.SetMobilityModel("ns3::ConstantVelocityMobilityModel");
+  mobilityUE.SetMobilityModel("ns3::ConstantPositionMobilityModel");
   //mobilityUE->SetVelocity({20,0,0});
   mobilityUE.Install (ueResponders);
 
-  std::system(("cd xml2csv && python3 xml2csv.py -p " + traceFileName).c_str());
-  std::ifstream traceFile(traceFileName);
-  
-  for (NodeContainer::Iterator L = ueResponders.Begin(); L != ueResponders.End(); ++L)
-  {  
-    Ptr<Node> node = *L;
-    Ptr<MobilityModel> mob = node->GetObject<MobilityModel> ();
-    // Ptr<ConstantVelocityMobilityModel> VelMob = node->GetObject<ConstantVelocityMobilityModel>();
-    Ptr<ConstantVelocityMobilityModel> VelMob = node->GetObject<ConstantVelocityMobilityModel>();
-    // if (mob->GetPosition().y > 13)
-    //   VelMob->SetVelocity(Vector(19.44, 0, 0));
-        //  VelMob->DoSetVelocityAngleRadius(100,90,10);
-            VelMob->SetPosition(getNextCoords(traceFile));
-    VelMob->SetVelocity(Vector(0,0,0));
-//      VelMob->SetVelocity(Vector(0, 0, 0));     
-    // else
-    //   VelMob->SetVelocity(Vector(-19.44, 0, 0));
-//      VelMob->SetVelocity(Vector(0, 0, 0));          
-  }
-  
-/*  MobilityHelper mobilityUE;
-  Ptr<ListPositionAllocator> positionAlloc = CreateObject <ListPositionAllocator>();
-  positionAlloc ->Add(Vector(0, 0, 0)); 
-  positionAlloc ->Add(Vector(10, 0, 0)); 
-  positionAlloc ->Add(Vector(20, 0, 0)); 
-  positionAlloc ->Add(Vector(30, 0, 0)); 
+  // std::system(("cd xml2csv && python xml2csv.py -p " + traceFileName).c_str());
+   // Open the trace file
+    if (!traceFile.is_open()) {
+        std::cerr << "Error opening trace file!" << std::endl;
+        return 1;
+    }
 
-  mobilityUE.SetPositionAllocator(positionAlloc);
-  mobilityUE.SetMobilityModel("ns3::ConstantPositionMobilityModel");
-  mobilityUE.Install (ueResponders); */
+
+
+//   int sas=0;
+//   for (NodeContainer::Iterator L = ueResponders.Begin(); L != ueResponders.End(); ++L)
+//   {  
+//     Ptr<Node> node = *L;
+//     Ptr<MobilityModel> mob = node->GetObject<MobilityModel> ();
+//     // Ptr<ConstantVelocityMobilityModel> VelMob = node->GetObject<ConstantVelocityMobilityModel>();
+//     Ptr<ConstantPositionMobilityModel> VelMob = node->GetObject<ConstantPositionMobilityModel>();
+//     // if (mob->GetPosition().y > 13)
+//     //   VelMob->SetVelocity(Vector(19.44, 0, 0));
+//         //  VelMob->DoSetVelocityAngleRadius(100,90,10);
+//             // VelMob->SetPosition(getNextCoords(traceFile));
+//             // sas++;
+//             // VelMob->SetVelocity(Vector(0,0,0));
+// //      VelMob->SetVelocity(Vector(0, 0, 0));     
+//     // else
+//     //   VelMob->SetVelocity(Vector(-19.44, 0, 0));
+// //      VelMob->SetVelocity(Vector(0, 0, 0));          
+//   }
+  updateNodePositions(&traceFile, ueResponders);
+    // Schedule recurring event to update node positions every 0.1 seconds
+   
+  
+// MobilityHelper mobilityUE;
+//   Ptr<ListPositionAllocator> positionAlloc = CreateObject <ListPositionAllocator>();
+//   positionAlloc ->Add(getNextCoords(traceFile)); 
+//   positionAlloc ->Add(getNextCoords(traceFile)); 
+//   positionAlloc ->Add(getNextCoords(traceFile)); 
+//   positionAlloc ->Add(getNextCoords(traceFile)); 
+
+//   mobilityUE.SetPositionAllocator(positionAlloc);
+//   mobilityUE.SetMobilityModel("ns3::ConstantPositionMobilityModel");
+//   mobilityUE.Install (ueResponders);
 
 
   for (NodeContainer::Iterator L = ueResponders.Begin(); L != ueResponders.End(); ++L)
@@ -1517,7 +1550,6 @@ main (int argc, char *argv[])
   Simulator::Destroy ();
 
   NS_LOG_INFO ("Done.");
-
   return 0;
 
 }
