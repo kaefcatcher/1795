@@ -19,5 +19,7 @@ clean:
 distclean:
 	./waf distclean
 
-command:
+config:
 	@python testing_config.py
+config_no_graphic:
+	@python testing_config.py --no_graphic

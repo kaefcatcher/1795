@@ -1,9 +1,35 @@
 import subprocess
 import Tkinter as tk
 import ttk
-from tkFileDialog import askopenfilename
+import tkFileDialog
+import sys
 
 def main():
+    if "--no_graphic" in sys.argv:
+        execute_command_from_config()
+    else:
+        run_graphic_interface()
+
+def execute_command_from_config():
+    config = read_config_file()
+    command = "./waf --run \"scratch/updated_highway"
+    for param, value in config.items():
+        command += " --{}={}".format(param, value)
+    command += "\""
+    print("Running command:", command)
+    subprocess.call(command, shell=True)
+
+def read_config_file():
+    config = {}
+    with open("config.txt", 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            if '=' in line:
+                param, value = line.strip().split('=')
+                config[param] = value
+    return config
+
+def run_graphic_interface():
     root = tk.Tk()
     root.title("Configuration Parameters")
 
@@ -72,7 +98,7 @@ def main():
         root.destroy()
 
     def import_parameters():
-        filename = askopenfilename(filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
+        filename = tkFileDialog.askopenfilename(filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
         if filename:
             with open(filename, 'r') as file:
                 lines = file.readlines()
