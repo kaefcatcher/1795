@@ -23,7 +23,7 @@ distclean:
 # DS for 1795
 config:
 	@python testing_config.py
-csv:
-	time python xml2csv/xml2csv.py -p xml2csv/test123.xml
+
 config_no_graphic:
+	time python xml2csv/xml2csv.py -p xml2csv/test123.xml
 	time python testing_config.py --no_graphic
