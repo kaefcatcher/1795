@@ -79,7 +79,7 @@ void Print(NodeContainer VehicleUEs);
 std::ifstream traceFile;
 
 void opencsv(std::string name) {
-  std::system(("cd xml2csv && python xml2csv.py -p " + name+".xml").c_str());
+  //std::system(("cd xml2csv && python xml2csv.py -p " + name+".xml").c_str());
   traceFile = std::ifstream("xml2csv/" + name + ".csv");
   if (!traceFile.is_open()) {
     std::cerr << "Error opening trace file!" << std::endl;

@@ -19,7 +19,10 @@ clean:
 distclean:
 	./waf distclean
 
+
+# DS for 1795
 config:
 	@python testing_config.py
 config_no_graphic:
-	@python testing_config.py --no_graphic
+	time python -p xml2csv/test123.xml
+	time python testing_config.py --no_graphic

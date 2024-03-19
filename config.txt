@@ -1,5 +1,5 @@
-Vehicles=2
-simTime=6
+Vehicles=1250
+simTime=100
 runNo=1
 noIBE=true
 Numerology=1
