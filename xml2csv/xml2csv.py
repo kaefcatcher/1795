@@ -23,7 +23,7 @@ for opt, arg in opts:
 tree = ET.parse(path)
 root = tree.getroot()
 
-csvfile = open("trace.csv",'w')
+csvfile = open("xml2csv/trace.csv",'w')
 csvfile_writer = csv.writer(csvfile)
 
 for timestep in root:
