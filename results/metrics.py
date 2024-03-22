@@ -7,7 +7,7 @@ from collections import defaultdict
 
 
 '''
-Example of usage:
+Example of usage :
 python3 results/metrics.py  base_path(results/Simulations/Periodic_Dynamic0_avgRRI0_VariableSize0_ReEval0_200_PDB0_867) simulation=1005/1009 metrics=cbr/aoi/pdr Matrix_RC515 
 or 
 python3 results/metrics.py base_path(results/Simulations/Periodic_Dynamic0_avgRRI0_VariableSize0_ReEval0_200_PDB0_867) simulation=1005/1009 metrics=all Matrix_RC515
