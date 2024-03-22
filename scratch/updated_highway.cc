@@ -79,7 +79,7 @@ void Print(NodeContainer VehicleUEs);
 std::ifstream traceFile;
 
 void opencsv(std::string name) {
-  std::system(("cd xml2csv && python xml2csv.py -p " + name+".xml").c_str());
+  //std::system(("cd xml2csv && python xml2csv.py -p " + name+".xml").c_str());
   traceFile = std::ifstream("xml2csv/" + name + ".csv");
   if (!traceFile.is_open()) {
     std::cerr << "Error opening trace file!" << std::endl;
@@ -231,7 +231,7 @@ void UdpClient::Send(void) {
     } else // Periodic traffic
     {
       T_gen = Periodic_Tgen[nodeId - 1];
-      v2xTag.SetPrsvp((double)Periodic_Tgen[nodeId - 1]);
+      v2xTag.SetPrsvp((double)100);
       //      v2xTag.SetPdb ((double) v2xTag.GetPrsvp ()); // @LUCA modified
       //      later
       v2xTag.SetPdb((double)PDB_Periodic[nodeId - 1]); // @LUCA modified later
