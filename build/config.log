@@ -1,24 +1,24 @@
-# project ns (3.22) configured on Wed Jan 31 20:46:34 2024 by
+# project ns (3.22) configured on Sun Mar 10 12:12:42 2024 by
 # waf 1.7.16 (abi 98, python 20712f0 on linux2)
 # using ./waf configure --disable-python --enable-examples --disable-tests --build-profile=debug
 #
 ----------------------------------------
 Setting top to
-/home/kaefcatcher/Miem_projects/cars/MoReV2X
+/home/aiminibaeva/project_sim
 ----------------------------------------
 Setting out to
-/home/kaefcatcher/Miem_projects/cars/MoReV2X/build
+/home/aiminibaeva/project_sim/build
 ----------------------------------------
 Checking for 'gcc' (c compiler)
-find program=['gcc', 'cc'] paths=['/home/kaefcatcher/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli', '/home/kaefcatcher/anaconda3/envs/robotics/bin', '/home/kaefcatcher/anaconda3/condabin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/ProgramData/Oracle/Java/javapath', '/mnt/c/Windows/system32', '/mnt/c/Windows', '/mnt/c/Windows/System32/Wbem', '/mnt/c/Windows/System32/WindowsPowerShell/v1.0', '/mnt/c/Windows/System32/OpenSSH', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312/Scripts', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312', '/mnt/c/Users/1/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/1/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='CC' -> '/usr/bin/gcc'
-find program=['ar'] paths=['/home/kaefcatcher/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli', '/home/kaefcatcher/anaconda3/envs/robotics/bin', '/home/kaefcatcher/anaconda3/condabin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/ProgramData/Oracle/Java/javapath', '/mnt/c/Windows/system32', '/mnt/c/Windows', '/mnt/c/Windows/System32/Wbem', '/mnt/c/Windows/System32/WindowsPowerShell/v1.0', '/mnt/c/Windows/System32/OpenSSH', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312/Scripts', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312', '/mnt/c/Users/1/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/1/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='AR' -> '/usr/bin/ar'
+find program=['gcc', 'cc'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='CC' -> '/usr/bin/gcc'
+find program=['ar'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='AR' -> '/usr/bin/ar'
 /usr/bin/gcc
 ----------------------------------------
 Checking for cc version
 11.4.0
 ----------------------------------------
 Checking for 'g++' (c++ compiler)
-find program=['g++', 'c++'] paths=['/home/kaefcatcher/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli', '/home/kaefcatcher/anaconda3/envs/robotics/bin', '/home/kaefcatcher/anaconda3/condabin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/ProgramData/Oracle/Java/javapath', '/mnt/c/Windows/system32', '/mnt/c/Windows', '/mnt/c/Windows/System32/Wbem', '/mnt/c/Windows/System32/WindowsPowerShell/v1.0', '/mnt/c/Windows/System32/OpenSSH', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312/Scripts', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312', '/mnt/c/Users/1/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/1/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='CXX' -> '/usr/bin/g++'
+find program=['g++', 'c++'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='CXX' -> '/usr/bin/g++'
 (tool ar is already loaded, skipping)
 /usr/bin/g++
 ---------------------------------------------------------
@@ -33,33 +33,29 @@ int main() { return 0; }
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-Wl,--soname=foo', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cc', '-c', '-o', 'test.cc.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_fe0ca542f39064c5a14ee41a2e983996/testbuild/test.cc.1.o -> build/.conf_check_fe0ca542f39064c5a14ee41a2e983996/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cc.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_fe0ca542f39064c5a14ee41a2e983996/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cc.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_fe0ca542f39064c5a14ee41a2e983996/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 ok
 ---------------------------------------------------------
 Checking boost includes
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src: headers not found, please provide a --boost-includes argument (see help)
+from /home/aiminibaeva/project_sim/src: headers not found, please provide a --boost-includes argument (see help)
 not found
 ---------------------------------------------------------
 Checking boost includes
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src: headers not found, please provide a --boost-includes argument (see help)
+from /home/aiminibaeva/project_sim/src: headers not found, please provide a --boost-includes argument (see help)
 not found
 ---------------------------------------------------------
 Checking for click location
 not found
 ---------------------------------------------------------
 Checking for program pkg-config
-/usr/bin/pkg-config
-find program=['pkg-config'] paths=['/home/kaefcatcher/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli', '/home/kaefcatcher/anaconda3/envs/robotics/bin', '/home/kaefcatcher/anaconda3/condabin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/ProgramData/Oracle/Java/javapath', '/mnt/c/Windows/system32', '/mnt/c/Windows', '/mnt/c/Windows/System32/Wbem', '/mnt/c/Windows/System32/WindowsPowerShell/v1.0', '/mnt/c/Windows/System32/OpenSSH', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312/Scripts', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312', '/mnt/c/Users/1/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/1/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='PKGCONFIG' -> '/usr/bin/pkg-config'
----------------------------------------------------------
-Checking for 'gtk+-2.0' >= 2.12
-['/usr/bin/pkg-config', '--atleast-version=2.12', 'gtk+-2.0']
 not found
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/config-store: The configuration failed
+find program=['pkg-config'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='PKGCONFIG' -> ''
+from /home/aiminibaeva/project_sim/src/config-store: Could not find the program pkg-config
 ---------------------------------------------------------
-Checking for 'libxml-2.0' >= 2.7
-['/usr/bin/pkg-config', '--atleast-version=2.7', 'libxml-2.0']
+Checking for program pkg-config
 not found
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/config-store: The configuration failed
+find program=['pkg-config'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='PKGCONFIG' -> ''
+from /home/aiminibaeva/project_sim/src/config-store: Could not find the program pkg-config
 ---------------------------------------------------------
 Checking for type uint128_t
 ==>
@@ -93,18 +89,18 @@ err: ../test.cpp: In function ‘int main(int, char**)’:
       |                     ^~~~~~~~~
       |                     uint8_t
 
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/core: Test does not build: Traceback (most recent call last):
-  File "/home/kaefcatcher/Miem_projects/cars/MoReV2X/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Tools/c_config.py", line 460, in run_c_code
+from /home/aiminibaeva/project_sim/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/aiminibaeva/project_sim/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Tools/c_config.py", line 460, in run_c_code
     bld.compile()
-  File "/home/kaefcatcher/Miem_projects/cars/MoReV2X/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Build.py", line 188, in compile
+  File "/home/aiminibaeva/project_sim/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Build.py", line 188, in compile
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 140474243976720: cxx test.cpp -> test.cpp.1.o}
+	{task 140708229120784: cxx test.cpp -> test.cpp.1.o}
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 
 not found
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/core: The configuration failed
+from /home/aiminibaeva/project_sim/src/core: The configuration failed
 ---------------------------------------------------------
 Checking for type __uint128_t
 ==>
@@ -123,7 +119,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_ace1886511f08627ee2e4ca020806295/testbuild/test.cpp.1.o -> build/.conf_check_ace1886511f08627ee2e4ca020806295/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_ace1886511f08627ee2e4ca020806295/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_ace1886511f08627ee2e4ca020806295/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking high precision implementation
@@ -144,7 +140,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_fa0c4ec9c63ac505501cc0863d9bdc48/testbuild/test.cpp.1.o -> build/.conf_check_fa0c4ec9c63ac505501cc0863d9bdc48/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_fa0c4ec9c63ac505501cc0863d9bdc48/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_fa0c4ec9c63ac505501cc0863d9bdc48/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header inttypes.h
@@ -162,7 +158,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_7c67b81911f8bf0aede92c843d0e47cf/testbuild/test.cpp.1.o -> build/.conf_check_7c67b81911f8bf0aede92c843d0e47cf/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_7c67b81911f8bf0aede92c843d0e47cf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_7c67b81911f8bf0aede92c843d0e47cf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -183,18 +179,18 @@ err: ../test.cpp:1:10: fatal error: sys/inttypes.h: No such file or directory
       |          ^~~~~~~~~~~~~~~~
 compilation terminated.
 
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/core: Test does not build: Traceback (most recent call last):
-  File "/home/kaefcatcher/Miem_projects/cars/MoReV2X/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Tools/c_config.py", line 460, in run_c_code
+from /home/aiminibaeva/project_sim/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/aiminibaeva/project_sim/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Tools/c_config.py", line 460, in run_c_code
     bld.compile()
-  File "/home/kaefcatcher/Miem_projects/cars/MoReV2X/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Build.py", line 188, in compile
+  File "/home/aiminibaeva/project_sim/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Build.py", line 188, in compile
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 140474243582288: cxx test.cpp -> test.cpp.1.o}
+	{task 140708229219600: cxx test.cpp -> test.cpp.1.o}
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 
 not found
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/core: The configuration failed
+from /home/aiminibaeva/project_sim/src/core: The configuration failed
 ---------------------------------------------------------
 Checking for header sys/types.h
 ==>
@@ -211,7 +207,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_8d38681417ac64f5b5b7d4ca87b0e4f3/testbuild/test.cpp.1.o -> build/.conf_check_8d38681417ac64f5b5b7d4ca87b0e4f3/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_8d38681417ac64f5b5b7d4ca87b0e4f3/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_8d38681417ac64f5b5b7d4ca87b0e4f3/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header sys/stat.h
@@ -229,7 +225,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_8dd79274749d59bf459dfbeb1200c7d7/testbuild/test.cpp.1.o -> build/.conf_check_8dd79274749d59bf459dfbeb1200c7d7/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_8dd79274749d59bf459dfbeb1200c7d7/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_8dd79274749d59bf459dfbeb1200c7d7/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header dirent.h
@@ -247,7 +243,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_c94d96928742c001335a0559791a93d8/testbuild/test.cpp.1.o -> build/.conf_check_c94d96928742c001335a0559791a93d8/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_c94d96928742c001335a0559791a93d8/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_c94d96928742c001335a0559791a93d8/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header stdlib.h
@@ -265,7 +261,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_3a82ef2f96ebcc67f6086c98d2e6291e/testbuild/test.cpp.1.o -> build/.conf_check_3a82ef2f96ebcc67f6086c98d2e6291e/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_3a82ef2f96ebcc67f6086c98d2e6291e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_3a82ef2f96ebcc67f6086c98d2e6291e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header signal.h
@@ -283,7 +279,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_48955ac54d2136a572805353a7b9b62d/testbuild/test.cpp.1.o -> build/.conf_check_48955ac54d2136a572805353a7b9b62d/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_48955ac54d2136a572805353a7b9b62d/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_48955ac54d2136a572805353a7b9b62d/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header pthread.h
@@ -303,7 +299,7 @@ int main ()
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-pthread', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_2be466e82e703a744ee152afe2b58299/testbuild/test.cpp.1.o -> build/.conf_check_2be466e82e703a744ee152afe2b58299/testbuild/testprog
 [0m
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_2be466e82e703a744ee152afe2b58299/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_2be466e82e703a744ee152afe2b58299/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header stdint.h
@@ -321,7 +317,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_fa0c4ec9c63ac505501cc0863d9bdc48/testbuild/test.cpp.1.o -> build/.conf_check_fa0c4ec9c63ac505501cc0863d9bdc48/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_fa0c4ec9c63ac505501cc0863d9bdc48/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_fa0c4ec9c63ac505501cc0863d9bdc48/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header inttypes.h
@@ -339,7 +335,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_7c67b81911f8bf0aede92c843d0e47cf/testbuild/test.cpp.1.o -> build/.conf_check_7c67b81911f8bf0aede92c843d0e47cf/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_7c67b81911f8bf0aede92c843d0e47cf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_7c67b81911f8bf0aede92c843d0e47cf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -360,18 +356,18 @@ err: ../test.cpp:1:10: fatal error: sys/inttypes.h: No such file or directory
       |          ^~~~~~~~~~~~~~~~
 compilation terminated.
 
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/core: Test does not build: Traceback (most recent call last):
-  File "/home/kaefcatcher/Miem_projects/cars/MoReV2X/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Tools/c_config.py", line 460, in run_c_code
+from /home/aiminibaeva/project_sim/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/aiminibaeva/project_sim/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Tools/c_config.py", line 460, in run_c_code
     bld.compile()
-  File "/home/kaefcatcher/Miem_projects/cars/MoReV2X/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Build.py", line 188, in compile
+  File "/home/aiminibaeva/project_sim/.waf-1.7.16-9ca17eb492c97b689870b4ff9db75880/waflib/Build.py", line 188, in compile
     raise Errors.BuildError(self.producer.error)
 BuildError: Build failed
  -> task in 'testprog' failed (exit status 1): 
-	{task 140474243672976: cxx test.cpp -> test.cpp.1.o}
+	{task 140708229211280: cxx test.cpp -> test.cpp.1.o}
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 
 not found
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/core: The configuration failed
+from /home/aiminibaeva/project_sim/src/core: The configuration failed
 ---------------------------------------------------------
 Checking for library rt
 ==>
@@ -387,7 +383,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-pthread', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_5ef57bc0d8aa3565949b6ce1186fd4a7/testbuild/test.cpp.1.o -> build/.conf_check_5ef57bc0d8aa3565949b6ce1186fd4a7/testbuild/testprog
 [0m
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_5ef57bc0d8aa3565949b6ce1186fd4a7/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_5ef57bc0d8aa3565949b6ce1186fd4a7/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
 yes
 ---------------------------------------------------------
 Checking for header sys/ioctl.h
@@ -405,7 +401,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_ebd591dbc3bb45aa25214505e9aa0d0f/testbuild/test.cpp.1.o -> build/.conf_check_ebd591dbc3bb45aa25214505e9aa0d0f/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_ebd591dbc3bb45aa25214505e9aa0d0f/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_ebd591dbc3bb45aa25214505e9aa0d0f/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header net/if.h
@@ -423,7 +419,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_ab7199aa46fcaa2e15071e73776f8218/testbuild/test.cpp.1.o -> build/.conf_check_ab7199aa46fcaa2e15071e73776f8218/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_ab7199aa46fcaa2e15071e73776f8218/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_ab7199aa46fcaa2e15071e73776f8218/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header net/ethernet.h
@@ -441,7 +437,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_6c6255d84543ffa2d8b83c989561eef9/testbuild/test.cpp.1.o -> build/.conf_check_6c6255d84543ffa2d8b83c989561eef9/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_6c6255d84543ffa2d8b83c989561eef9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_6c6255d84543ffa2d8b83c989561eef9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header linux/if_tun.h
@@ -459,7 +455,7 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_79f849e1774b3cde8897857e178c7c8c/testbuild/test.cpp.1.o -> build/.conf_check_79f849e1774b3cde8897857e178c7c8c/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_79f849e1774b3cde8897857e178c7c8c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_79f849e1774b3cde8897857e178c7c8c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for header netpacket/packet.h
@@ -477,21 +473,16 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_f00bb2460dc7019f64c1a347be5879fa/testbuild/test.cpp.1.o -> build/.conf_check_f00bb2460dc7019f64c1a347be5879fa/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_f00bb2460dc7019f64c1a347be5879fa/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_f00bb2460dc7019f64c1a347be5879fa/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for NSC location
 not found
 ---------------------------------------------------------
-Checking for 'sqlite3'
-['/usr/bin/pkg-config', '--cflags', '--libs', 'sqlite3']
-err: Package sqlite3 was not found in the pkg-config search path.
-Perhaps you should add the directory containing `sqlite3.pc'
-to the PKG_CONFIG_PATH environment variable
-No package 'sqlite3' found
-
+Checking for program pkg-config
 not found
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X/src/stats: The configuration failed
+find program=['pkg-config'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='PKGCONFIG' -> ''
+from /home/aiminibaeva/project_sim/src/stats: Could not find the program pkg-config
 ---------------------------------------------------------
 Checking for header linux/if_tun.h
 ==>
@@ -508,26 +499,22 @@ int main(int argc, char **argv) {
 ['/usr/bin/g++', '-Wall', '-g', '-O0', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o', 'test.cpp.1.o']
 [2/2] [33mcxxprogram: build/.conf_check_79f849e1774b3cde8897857e178c7c8c/testbuild/test.cpp.1.o -> build/.conf_check_79f849e1774b3cde8897857e178c7c8c/testbuild/testprog
 [0m
-['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_79f849e1774b3cde8897857e178c7c8c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_79f849e1774b3cde8897857e178c7c8c/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ---------------------------------------------------------
 Checking for program sudo
 /usr/bin/sudo
-find program=['sudo'] paths=['/home/kaefcatcher/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli', '/home/kaefcatcher/anaconda3/envs/robotics/bin', '/home/kaefcatcher/anaconda3/condabin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/ProgramData/Oracle/Java/javapath', '/mnt/c/Windows/system32', '/mnt/c/Windows', '/mnt/c/Windows/System32/Wbem', '/mnt/c/Windows/System32/WindowsPowerShell/v1.0', '/mnt/c/Windows/System32/OpenSSH', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312/Scripts', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312', '/mnt/c/Users/1/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/1/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='SUDO' -> '/usr/bin/sudo'
+find program=['sudo'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='SUDO' -> '/usr/bin/sudo'
 ---------------------------------------------------------
 Checking for program valgrind
-/usr/bin/valgrind
-find program=['valgrind'] paths=['/home/kaefcatcher/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli', '/home/kaefcatcher/anaconda3/envs/robotics/bin', '/home/kaefcatcher/anaconda3/condabin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/ProgramData/Oracle/Java/javapath', '/mnt/c/Windows/system32', '/mnt/c/Windows', '/mnt/c/Windows/System32/Wbem', '/mnt/c/Windows/System32/WindowsPowerShell/v1.0', '/mnt/c/Windows/System32/OpenSSH', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312/Scripts', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312', '/mnt/c/Users/1/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/1/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='VALGRIND' -> '/usr/bin/valgrind'
----------------------------------------------------------
-Checking for 'gsl'
-['/usr/bin/pkg-config', '--cflags', '--libs', 'gsl']
-err: Package gsl was not found in the pkg-config search path.
-Perhaps you should add the directory containing `gsl.pc'
-to the PKG_CONFIG_PATH environment variable
-No package 'gsl' found
-
 not found
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X: The configuration failed
+find program=['valgrind'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='VALGRIND' -> ''
+from /home/aiminibaeva/project_sim: Could not find the program valgrind
+---------------------------------------------------------
+Checking for program pkg-config
+not found
+find program=['pkg-config'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='PKGCONFIG' -> ''
+from /home/aiminibaeva/project_sim: Could not find the program pkg-config
 ----------------------------------------------------------------
 Checking for compilation flag -Wno-error=deprecated-d... support
 ==>
@@ -540,7 +527,7 @@ int main() { return 0; }
 ['/usr/bin/gcc', '-Wno-error=deprecated-declarations', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', 'test.c.1.o']
 [2/2] [33mcprogram: build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/test.c.1.o -> build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog
 [0m
-['/usr/bin/gcc', 'test.c.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/gcc', 'test.c.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 ok
 ----------------------------------------------------------------
 Checking for compilation flag -fstrict-aliasing... support
@@ -554,7 +541,7 @@ int main() { return 0; }
 ['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', 'test.c.1.o']
 [2/2] [33mcprogram: build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/test.c.1.o -> build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog
 [0m
-['/usr/bin/gcc', 'test.c.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/gcc', 'test.c.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 ok
 ----------------------------------------------------------------
 Checking for compilation flag -Wstrict-aliasing... support
@@ -568,10 +555,10 @@ int main() { return 0; }
 ['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o', 'test.c.1.o']
 [2/2] [33mcprogram: build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/test.c.1.o -> build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog
 [0m
-['/usr/bin/gcc', 'test.c.1.o', '-o', '/home/kaefcatcher/Miem_projects/cars/MoReV2X/build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/gcc', 'test.c.1.o', '-o', '/home/aiminibaeva/project_sim/build/.conf_check_d8a2c40aecfb7c8eac7dd03fcbfb1110/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 ok
 ----------------------------------------------------------------
 Checking for program doxygen
 not found
-find program=['doxygen'] paths=['/home/kaefcatcher/.vscode-server/bin/8b3775030ed1a69b13e4f4c628c612102e30a681/bin/remote-cli', '/home/kaefcatcher/anaconda3/envs/robotics/bin', '/home/kaefcatcher/anaconda3/condabin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/ProgramData/Oracle/Java/javapath', '/mnt/c/Windows/system32', '/mnt/c/Windows', '/mnt/c/Windows/System32/Wbem', '/mnt/c/Windows/System32/WindowsPowerShell/v1.0', '/mnt/c/Windows/System32/OpenSSH', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312/Scripts', '/mnt/c/Users/1/AppData/Local/Programs/Python/Python312', '/mnt/c/Users/1/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/1/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='DOXYGEN' -> ''
-from /home/kaefcatcher/Miem_projects/cars/MoReV2X: Could not find the program doxygen
+find program=['doxygen'] paths=['/home/aiminibaeva/.vscode-server/bin/1e790d77f81672c49be070e04474901747115651/bin/remote-cli', '/home/aiminibaeva/.local/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/usr/lib/wsl/lib', '/mnt/c/Program Files/ImageMagick-7.1.1-Q16-HDRI', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files (x86)/Kaspersky Lab/Kaspersky Endpoint Security for Windows/', '/mnt/c/FFmpeg/bin', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/WireGuard/', '/mnt/c/Program Files/MATLAB/R2023a/runtime/win64', '/mnt/c/Program Files/MATLAB/R2023a/bin', '/mnt/c/Program Files/dotnet/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/Scripts/', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Python/Python311/', '/mnt/c/Python/anaconda3', '/mnt/c/Python/anaconda3/Library/mingw-w64/bin', '/mnt/c/Python/anaconda3/Library/usr/bin', '/mnt/c/Python/anaconda3/Library/bin', '/mnt/c/Python/anaconda3/Scripts', '/mnt/c/Python/Anaconda', '/mnt/c/Python/Anaconda/Library/mingw-w64/bin', '/mnt/c/Python/Anaconda/Library/usr/bin', '/mnt/c/Python/Anaconda/Library/bin', '/mnt/c/Python/Anaconda/Scripts', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Microsoft/WindowsApps', '/mnt/c/intelFPGA/17.1/modelsim_ase/win32aloem', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/Programs/Microsoft VS Code/bin', '/mnt/c/Users/Alsu Minibaeva/AppData/Local/GitHubDesktop/bin', '/snap/bin'] var='DOXYGEN' -> ''
+from /home/aiminibaeva/project_sim: Could not find the program doxygen

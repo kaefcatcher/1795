@@ -1,13 +1,17 @@
 import sys
 import time
+import pandas as pd
 import numpy as np
 import os
 from collections import defaultdict
 
 
-# Example of usage:
-# python3 metrics.py base_path simulation=1005/1009 metrics=cbr/aoi/pdr or python metrics.py base_path simulation=1005/1009 metrics=all
-
+'''
+Example of usage:
+python3 results/metrics.py  base_path(results/Simulations/Periodic_Dynamic0_avgRRI0_VariableSize0_ReEval0_200_PDB0_867) simulation=1005/1009 metrics=cbr/aoi/pdr Matrix_RC515 
+or 
+python3 results/metrics.py base_path(results/Simulations/Periodic_Dynamic0_avgRRI0_VariableSize0_ReEval0_200_PDB0_867) simulation=1005/1009 metrics=all Matrix_RC515
+'''
 
 start_time = time.time()
 distance_limit = 920
@@ -21,14 +25,17 @@ headers = ''
 
 def filling_permanent_data(simulation_num, regions_list, pkeep):
     global headers
+    headers = 'simulation_num, region_value, pkeep, region_weights[region_value]'
     matrix = []
     for region_value in regions_list:
-        matrix.append([simulation_num, (region_value * 50) + 25, pkeep, region_weights[region_value]])
+        matrix.append({'simulation_num': simulation_num, 
+                       'region_value': (region_value * 50) + 25, 
+                       'pkeep': p_keep, 
+                       'region_weight': region_weights[region_value]})
 
-    output_path = 'Matrix_RC515_' + str(simulation_num) + '_.txt'
-    headers = 'simulation_num, region_value, pkeep, region_weights[region_value]'
-    with open(output_path, 'w') as file:
-        np.savetxt(file, matrix, delimiter=',', fmt='%.6f', header=headers)
+    output_path = 'results/KPIs_diff_simulation_calls/' + name_of_simulation + '_' + str(simulation_num) + '_.csv'
+    df = pd.DataFrame(matrix)
+    df.to_csv(output_path, index=False, float_format='%.6f')
 
 
 def calculate_pdr(simulation_num, packet_total, packet_decodedorlost, distance_region_index, regions_list,
@@ -65,10 +72,10 @@ def calculate_pdr(simulation_num, packet_total, packet_decodedorlost, distance_r
 
         pdr_matrix.append([simulation_num, (region_value * 50) + 25, pkeep, region_weights[region_value],  value_pdr])
 
-    output_path = 'Matrix_RC515_' + str(simulation_num) + '_.txt'
+    output_path = 'results/KPIs_diff_simulation_calls/' + name_of_simulation + '_' + str(simulation_num) + '_.csv'
     if len(headers.split(', ')) < 9:
         headers = headers + ', value_pdr'
-    existing_data = np.loadtxt(output_path, delimiter=',')
+    existing_data = np.genfromtxt(output_path, delimiter=',', skip_header=1)
     if len(existing_data) > 0:
         combined_data = np.concatenate((existing_data, np.array(pdr_matrix)[:, -1][:, np.newaxis]), axis=1)
     else:
@@ -77,7 +84,7 @@ def calculate_pdr(simulation_num, packet_total, packet_decodedorlost, distance_r
 
 
 def average_pdr():
-    output_path = 'Matrix_RC515.txt'
+    output_path = 'results/KPIs_diff_simulations/' + name_of_simulation + '.csv'
     data = np.genfromtxt(output_path, delimiter=',', names=headers.split(', '))
     filtered_data = data[(data['value_pdr'] > 0) & (data['region_value'] < distance_limit)]
     pkeep_values = np.unique(filtered_data['pkeep'])
@@ -88,7 +95,7 @@ def average_pdr():
         average_pdr = np.mean(subset_data['value_pdr'])
         average_pdr_per_distance.append((pkeep, average_pdr))
 
-    output_path_average = "Average_pdr"
+    output_path_average = 'results/Average_metrics/Average_pdr' + name_of_simulation + '.csv'
     with open(output_path_average, 'w') as file:
         np.savetxt(file, average_pdr_per_distance, delimiter=',', fmt='%.6f', header="pkeep, average_pdr")
 
@@ -127,10 +134,10 @@ def calculate_plr(simulation_num, packet_total, packet_collided, packet_prop_los
         plr_matrix.append(
             [simulation_num, (region_value * 50) + 25, pkeep, region_weights[region_value], value_plr])
 
-    output_path = 'Matrix_RC515_' + str(simulation_num) + '_.txt'
+    output_path = 'results/KPIs_diff_simulation_calls/' + name_of_simulation + '_' + str(simulation_num) + '_.csv'
     if len(headers.split(', ')) < 9:
         headers = headers + ', value_plr'
-    existing_data = np.loadtxt(output_path, delimiter=',')
+    existing_data = np.genfromtxt(output_path, delimiter=',', skip_header=1)
     if len(existing_data) > 0:
         combined_data = np.concatenate((existing_data, np.array(plr_matrix)[:, -1][:, np.newaxis]), axis=1)
     else:
@@ -139,7 +146,7 @@ def calculate_plr(simulation_num, packet_total, packet_collided, packet_prop_los
 
 
 def average_plr():
-    output_path = 'Matrix_RC515.txt'
+    output_path = 'results/KPIs_diff_simulations/' + name_of_simulation + '.csv'
     data = np.genfromtxt(output_path, delimiter=',', names=headers.split(', '))
     filtered_data = data[(data['value_plr'] > 0) & (data['region_value'] < distance_limit)]
     pkeep_values = np.unique(filtered_data['pkeep'])
@@ -150,7 +157,7 @@ def average_plr():
         average_plr = np.mean(subset_data['value_plr'])
         average_plr_per_distance.append((pkeep, average_plr))
 
-    output_path_average = "Average_plr"
+    output_path_average = 'results/Average_metrics/Average_plr' + name_of_simulation + '.csv'
     with open(output_path_average, 'w') as file:
         np.savetxt(file, average_plr_per_distance, delimiter=',', fmt='%.6f', header="pkeep, average_plr")
 
@@ -189,10 +196,10 @@ def calculate_clr(simulation_num, packet_total, packet_collided, packet_prop_los
 
         clr_matrix.append([simulation_num, (region_value * 50) + 25, pkeep, region_weights[region_value], value_clr])
 
-    output_path = 'Matrix_RC515_' + str(simulation_num) + '_.txt'
+    output_path = 'results/KPIs_diff_simulation_calls/' +  name_of_simulation + '_' + str(simulation_num) + '_.csv'
     if len(headers.split(', ')) < 9:
         headers = headers + ', value_clr'
-    existing_data = np.loadtxt(output_path, delimiter=',')
+    existing_data = np.genfromtxt(output_path, delimiter=',', skip_header=1)
     if len(existing_data) > 0:
         combined_data = np.concatenate((existing_data, np.array(clr_matrix)[:, -1][:, np.newaxis]), axis=1)
     else:
@@ -201,7 +208,7 @@ def calculate_clr(simulation_num, packet_total, packet_collided, packet_prop_los
 
 
 def average_clr():
-    output_path = 'Matrix_RC515.txt'
+    output_path = 'results/KPIs_diff_simulations/' + name_of_simulation + '.csv'
     data = np.genfromtxt(output_path, delimiter=',', names=headers.split(', '))
     filtered_data = data[(data['value_clr'] > 0) & (data['region_value'] < distance_limit)]
     pkeep_values = np.unique(filtered_data['pkeep'])
@@ -212,7 +219,7 @@ def average_clr():
         average_clr = np.mean(subset_data['value_clr'])
         average_clr_per_distance.append((pkeep, average_clr))
 
-    output_path_average = "Average_clr"
+    output_path_average = 'results/Average_metrics/Average_clr' + name_of_simulation + '.csv'
     with open(output_path_average, 'w') as file:
         np.savetxt(file, average_clr_per_distance, delimiter=',', fmt='%.6f', header="pkeep, average_clr")
 
@@ -270,10 +277,10 @@ def calculate_paoi(simulation_num, pir_dict, regions_list, pkeep):
         average_paoi_matrix.append(
             [simulation_num, (region_value * 50) + 25, pkeep, region_weights[region_value], value_paoi])
 
-    output_path = 'Matrix_RC515_' + str(simulation_num) + '_.txt'
+    output_path = 'results/KPIs_diff_simulation_calls/' +  name_of_simulation + '_' + str(simulation_num) + '_.csv'
     if len(headers.split(', ')) < 9:
         headers = headers + ', value_paoi'
-    existing_data = np.loadtxt(output_path, delimiter=',')
+    existing_data = np.genfromtxt(output_path, delimiter=',', skip_header=1)
     if len(existing_data) > 0:
         combined_data = np.concatenate((existing_data, np.array(average_paoi_matrix)[:, -1][:, np.newaxis]), axis=1)
     else:
@@ -282,7 +289,7 @@ def calculate_paoi(simulation_num, pir_dict, regions_list, pkeep):
 
 
 def average_paoi():
-    output_path = 'Matrix_RC515.txt'
+    output_path = 'results/KPIs_diff_simulations/' + name_of_simulation + '.csv'
     data = np.genfromtxt(output_path, delimiter=',', names=headers.split(', '))
     filtered_data = data[(data['value_paoi'] > 0) & (data['region_value'] < distance_limit)]
     pkeep_values = np.unique(filtered_data['pkeep'])
@@ -293,7 +300,7 @@ def average_paoi():
         average_paoi = np.mean(subset_data['value_paoi'])
         average_paoi_per_distance.append((pkeep, average_paoi))
 
-    output_path_average = "Average_paoi"
+    output_path_average = 'results/Average_metrics/Average_paoi' + name_of_simulation + '.csv'
     with open(output_path_average, 'w') as file:
         np.savetxt(file, average_paoi_per_distance, delimiter=',', fmt='%.6f', header="pkeep, average_paoi")
 
@@ -335,10 +342,10 @@ def calculate_aoi(simulation_num, pir_dict, regions_list, pkeep):
         average_aoi_matrix.append(
             [simulation_num, (region_value * 50) + 25, pkeep, region_weights[region_value], value_aoi])
 
-    output_path = 'Matrix_RC515_' + str(simulation_num) + '_.txt'
+    output_path = 'results/KPIs_diff_simulation_calls/' +  name_of_simulation + '_' + str(simulation_num) + '_.csv'
     if len(headers.split(', ')) < 9:
         headers = headers + ', value_aoi'
-    existing_data = np.loadtxt(output_path, delimiter=',')
+    existing_data = np.genfromtxt(output_path, delimiter=',', skip_header=1)
     if len(existing_data) > 0:
         combined_data = np.concatenate((existing_data, np.array(average_aoi_matrix)[:, -1][:, np.newaxis]), axis=1)
     else:
@@ -347,7 +354,7 @@ def calculate_aoi(simulation_num, pir_dict, regions_list, pkeep):
 
 
 def average_aoi():
-    output_path = 'Matrix_RC515.txt'
+    output_path = 'results/KPIs_diff_simulations/' + name_of_simulation + '.csv'
     data = np.genfromtxt(output_path, delimiter=',', names=headers.split(', '))
     filtered_data = data[(data['value_aoi'] > 0) & (data['region_value'] < distance_limit)]
     pkeep_values = np.unique(filtered_data['pkeep'])
@@ -358,7 +365,7 @@ def average_aoi():
         average_aoi = np.mean(subset_data['value_aoi'])
         average_aoi_per_distance.append((pkeep, average_aoi))
 
-    output_path_average = "Average_aoi"
+    output_path_average = 'results/Average_metrics/Average_aoi' + name_of_simulation + '.csv'
     with open(output_path_average, 'w') as file:
         np.savetxt(file, average_aoi_per_distance, delimiter=',', fmt='%.6f', header="pkeep, average_aoi")
 
@@ -368,9 +375,9 @@ def process_log_file(file_path, packet_total, packet_decoded, packet_collision_l
     with open(file_path, 'r') as file:
         for line in file:
             values = line.strip().split(',')
-            txID = int(values[7])
-            rxID = int(values[8])
-            distance_pair = float(values[6])
+            txID = int(values[3])
+            rxID = int(values[4])
+            distance_pair = float(values[2])
 
             for i, border in enumerate(border_values):
                 if distance_pair <= border:
@@ -384,23 +391,23 @@ def process_log_file(file_path, packet_total, packet_decoded, packet_collision_l
                 packet_total[(rxID, txID)] = 0
             packet_total[(rxID, txID)] += 1
 
-            if int(values[9]) == 1:
+            if int(values[5]) == 1:
                 if (rxID, txID) not in packet_decoded:
                     packet_decoded[(rxID, txID)] = 0
 
                 packet_decoded[(rxID, txID)] += 1
 
                 rxTime = float(values[0])
-                txID_dec = int(values[7])
-                rxID_dec = int(values[8])
-                distance[(rxID_dec, txID_dec)] = float(values[6])
+                txID_dec = int(values[3])
+                rxID_dec = int(values[4])
+                distance[(rxID_dec, txID_dec)] = float(values[2])
                 calculate_pir(rxTime, txID_dec, rxID_dec, pir_dict)
-            elif int(values[10]) == 2 or int(values[10]) == 0:
+            elif int(values[6]) == 2 or int(values[6]) == 0:
                 if (rxID, txID) not in packet_prop_loss:
                     packet_prop_loss[(rxID, txID)] = 0
 
                 packet_prop_loss[(rxID, txID)] += 1
-            elif int(values[10]) == 3:
+            elif int(values[6]) == 3:
                 if (rxID, txID) not in packet_collision_loss:
                     packet_collision_loss[(rxID, txID)] = 0
 
@@ -410,8 +417,8 @@ def process_log_file(file_path, packet_total, packet_decoded, packet_collision_l
 # MAIN
 
 if len(sys.argv) < 4:
-    print("Usage: python script.py <base_name of the file> simulation=start simulation/end simulation"
-          " metrics=metrics")
+    print("Usage: python3 results/script.py <base_name of the file> simulation=start_simulation/end_simulation"
+          " metrics=metrics name_of_simulation")
     sys.exit(1)
 
 header_flag = True
@@ -423,6 +430,7 @@ parameters_sim = sys.argv[2].split('=')
 value_sim = parameters_sim[0]
 other_parameters_sim = parameters_sim[1].split('/')
 p_keep = 0
+name_of_simulation = sys.argv[4]
 
 if value_sim == 'simulation':
     if len(other_parameters_sim) == 2:
@@ -445,7 +453,7 @@ for simulation_num in range(start_simulation, end_simulation + 1):
     distance_region_index = {}  # Matrix to store indexes of regions
     AoI_distance_region_index = {}  # Matrix to store indexes of regions for AoI calculation
     distance = {}  # Distance between pairs
-    region_weights = {region_value: 0 for region_value in regions_list}
+    region_weights = {region_value: 0 for region_value in regions_list} 
     border_values = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900]
 
     pir_dict = defaultdict(lambda: {'rx_times': [], 'pir_values': [], 'pir_squared_values': []})
@@ -498,12 +506,12 @@ for simulation_num in range(start_simulation, end_simulation + 1):
             calculate_aoi(simulation_num, pir_dict, regions_list, p_keep)
             calculate_pdr(simulation_num, packet_total, packet_decoded, distance_region_index, regions_list,
                           p_keep)
-            data_to_matrix = np.genfromtxt('Matrix_RC515_' + str(simulation_num) + '_.txt', delimiter=',')
+            data_to_matrix = np.genfromtxt('results/KPIs_diff_simulation_calls/' + name_of_simulation + '_' + str(simulation_num) + '_.csv', delimiter=',')
             if header_flag:
-                with open("Matrix_RC515.txt", 'a') as file:
+                with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'w') as file:
                     np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f', header=headers)
             else:
-                with open("Matrix_RC515.txt", 'a') as file:
+                with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'a') as file:
                     np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f')
             header_flag = False
         else:
@@ -511,55 +519,55 @@ for simulation_num in range(start_simulation, end_simulation + 1):
                 if param == 'clr':
                     calculate_clr(simulation_num, packet_total, packet_collision_loss, packet_prop_loss,
                                   distance_region_index, regions_list, p_keep)
-                    data_to_matrix = np.genfromtxt('Matrix_RC515_' + str(simulation_num) + '_.txt',
+                    data_to_matrix = np.genfromtxt('results/KPIs_diff_simulation_calls/' + name_of_simulation + '_' + str(simulation_num) + '_.csv',
                                                    delimiter=',')
                     if header_flag:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'w') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f', header=headers)
                     else:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'a') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f')
                 elif param == 'plr':
                     calculate_plr(simulation_num, packet_total, packet_collision_loss, packet_prop_loss,
                                   distance_region_index, regions_list, p_keep)
-                    data_to_matrix = np.genfromtxt('Matrix_RC515_' + str(simulation_num) + '_.txt',
+                    data_to_matrix = np.genfromtxt('results/KPIs_diff_simulation_calls/' + name_of_simulation + '.csv',
                                                    delimiter=',')
                     if header_flag:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'w') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f', header=headers)
                     else:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'a') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f')
                 elif param == 'paoi':
                     calculate_paoi(simulation_num, pir_dict, regions_list, p_keep)
-                    data_to_matrix = np.genfromtxt('Matrix_RC515_' + str(simulation_num) + '_.txt',
+                    data_to_matrix = np.genfromtxt('results/results/KPIs_diff_simulation_calls/' + name_of_simulation + '.csv',
                                                    delimiter=',')
                     if header_flag:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'w') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f', header=headers)
                     else:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'a') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f')
                 elif param == 'aoi':
                     calculate_aoi(simulation_num, pir_dict, regions_list, p_keep)
-                    data_to_matrix = np.genfromtxt('Matrix_RC515_' + str(simulation_num) + '_.txt',
+                    data_to_matrix = np.genfromtxt('results/KPIs_diff_simulation_calls/' + name_of_simulation + '.csv',
                                                    delimiter=',')
                     if header_flag:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'w') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f', header=headers)
                     else:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'a') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f')
                 elif param == 'pdr':
                     calculate_pdr(simulation_num, packet_total, packet_decoded, distance_region_index, regions_list,
                                   p_keep)
-                    data_to_matrix = np.genfromtxt('Matrix_RC515_' + str(simulation_num) + '_.txt',
+                    data_to_matrix = np.genfromtxt('results/KPIs_diff_simulation_calls/' + name_of_simulation + '_' + str(simulation_num) + '_.csv',
                                                    delimiter=',')
                     if header_flag:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'w') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f', header=headers)
                     else:
-                        with open("Matrix_RC515.txt", 'a') as file:
+                        with open('results/KPIs_diff_simulations/' + name_of_simulation + '.csv', 'a') as file:
                             np.savetxt(file, data_to_matrix, delimiter=',', fmt='%.6f')
             header_flag = False
 
